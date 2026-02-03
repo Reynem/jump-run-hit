@@ -74,10 +74,15 @@ animations = [{
 [node name="FlowerEnemy" type="Node2D" unique_id=1269448480]
 scale = Vector2(5, 5)
 script = ExtResource("1_ercr5")
+attack_time_step = 3.0
 offset = Vector2(25, -75)
-time_before_movement = 4.0
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1458996730]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_scoxc")
-frame = 2
+animation = &"attack"
+frame = 4
+frame_progress = 1.0
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=575652553]
+one_shot = true

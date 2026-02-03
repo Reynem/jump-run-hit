@@ -4,7 +4,7 @@ class_name EnemyBase
 
 @export var move_duration := 1.5
 @export var offset := Vector2.ZERO
-@export var time_before_movement := 0.1
+@export var movement_time_step := 0.1
 
 var current_index := 0
 var is_moving := false
@@ -33,7 +33,7 @@ func move_next() -> void:
 func _start_move_with_delay() -> void:
 	is_moving = true
 	
-	await get_tree().create_timer(time_before_movement).timeout
+	await get_tree().create_timer(movement_time_step).timeout
 	
 	_move_to_current()
 
@@ -47,4 +47,3 @@ func _move_to_current() -> void:
 	tween.tween_property(self, "global_position", target, move_duration)
 	tween.finished.connect(func(): is_moving = false)
 	
-	 
