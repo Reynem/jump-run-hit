@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://c66e21sn21u3c"]
+
+[ext_resource type="Texture2D" uid="uid://denesnwn0410h" path="res://assets/images/grasst.png" id="1_0f027"]
+[ext_resource type="Script" uid="uid://cwca8g2qs35lh" path="res://main_scene.gd" id="1_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://c5a4wbed0fdag" path="res://assets/images/dirt.png" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://5kmsb2tue8mw" path="res://enemies/flower/flower_enemy.tscn" id="2_gyfs4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
+texture = ExtResource("1_0f027")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gyfs4"]
+sources/0 = SubResource("TileSetAtlasSource_2c62f")
+
+[node name="MainScene" type="Node2D" unique_id=1738264478]
+script = ExtResource("1_gyfs4")
+flower_scene = ExtResource("2_gyfs4")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1578151642]
+texture_filter = 1
+tile_set = SubResource("TileSet_gyfs4")
+
+[node name="Grass" type="Node2D" parent="." unique_id=1847404873]
+
+[node name="Grass1" type="Sprite2D" parent="Grass" unique_id=400488289]
+texture_filter = 1
+position = Vector2(-437.99997, 146)
+scale = Vector2(17.413195, 10.094763)
+texture = ExtResource("1_0f027")
+
+[node name="Grass2" type="Sprite2D" parent="Grass" unique_id=710093605]
+texture_filter = 1
+position = Vector2(-160, 114.99999)
+scale = Vector2(17.413195, 10.094763)
+texture = ExtResource("1_0f027")
+
+[node name="Grass3" type="Sprite2D" parent="Grass" unique_id=794647772]
+texture_filter = 1
+position = Vector2(118, 84)
+scale = Vector2(17.413195, 10.094763)
+texture = ExtResource("1_0f027")
+
+[node name="Grass4" type="Sprite2D" parent="Grass" unique_id=2025704444]
+texture_filter = 1
+position = Vector2(396, 51.999992)
+scale = Vector2(17.413195, 10.094763)
+texture = ExtResource("1_0f027")
+
+[node name="Grass5" type="Sprite2D" parent="Grass" unique_id=1395873712]
+texture_filter = 1
+position = Vector2(672.99994, 19.999998)
+scale = Vector2(17.413195, 10.094763)
+texture = ExtResource("1_0f027")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1964441823]
+
+[node name="Dirt1" type="Sprite2D" parent="Node2D" unique_id=946110999]
+texture_filter = 1
+position = Vector2(-496, 306)
+scale = Vector2(10.029298, 10)
+texture = ExtResource("2_2c62f")
+
+[node name="Dirt8" type="Sprite2D" parent="Node2D" unique_id=734426715]
+texture_filter = 1
+position = Vector2(-345, 301)
+scale = Vector2(10.029298, 10)
+texture = ExtResource("2_2c62f")
+
+[node name="Dirt2" type="Sprite2D" parent="Node2D" unique_id=1681877543]
+texture_filter = 1
+position = Vector2(-220.00002, 274)
+scale = Vector2(10.029298, 10)
+texture = ExtResource("2_2c62f")
+
+[node name="Dirt3" type="Sprite2D" parent="Node2D" unique_id=185889010]
+texture_filter = 1
+position = Vector2(-61.000004, 273)
+scale = Vector2(10.029298, 10)
+texture = ExtResource("2_2c62f")
+
+[node name="Dirt4" type="Sprite2D" parent="Node2D" unique_id=339086169]
+texture_filter = 1
+position = Vector2(59, 243.00002)
+scale = Vector2(11.032, 11)
+texture = ExtResource("2_2c62f")
+
+[node name="Dirt5" type="Sprite2D" parent="Node2D" unique_id=1494341402]
+texture_filter = 1
+position = Vector2(241.00002, 229)
+scale = Vector2(12.336, 12.3)
+texture = ExtResource("2_2c62f")
+
+[node name="Dirt7" type="Sprite2D" parent="Node2D" unique_id=1518861142]
+texture_filter = 1
+position = Vector2(458, 219)
+scale = Vector2(15.044, 15)
+texture = ExtResource("2_2c62f")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=723530899]

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://5kmsb2tue8mw"]
+
+[ext_resource type="Texture2D" uid="uid://b0lycqruurjji" path="res://assets/animations/faceentity-Sheet.png" id="1_7eaqx"]
+[ext_resource type="Script" uid="uid://7uid7jisxt3r" path="res://enemies/flower/flower_enemy.gd" id="1_ercr5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f84r7"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t838"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcqe2"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omrxt"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aumk"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxf5p"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka7hn"]
+atlas = ExtResource("1_7eaqx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scoxc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f84r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t838")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcqe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omrxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aumk")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_rxf5p")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_ka7hn")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ka7hn")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_rxf5p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FlowerEnemy" type="Node2D" unique_id=1269448480]
+scale = Vector2(5, 5)
+script = ExtResource("1_ercr5")
+offset = Vector2(25, -75)
+time_before_movement = 4.0
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1458996730]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_scoxc")
+frame = 2
