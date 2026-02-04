@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cwca8g2qs35lh" path="res://main_scene.gd" id="1_gyfs4"]
 [ext_resource type="Texture2D" uid="uid://c5a4wbed0fdag" path="res://assets/images/dirt.png" id="2_2c62f"]
 [ext_resource type="PackedScene" uid="uid://5kmsb2tue8mw" path="res://enemies/flower/flower_enemy.tscn" id="2_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://yfiwj8j6sa8m" path="res://assets/animations/sky-Sheet.png" id="5_8mm7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -11,6 +12,28 @@ texture = ExtResource("1_0f027")
 
 [sub_resource type="TileSet" id="TileSet_gyfs4"]
 sources/0 = SubResource("TileSetAtlasSource_2c62f")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq1ik"]
+atlas = ExtResource("5_8mm7a")
+region = Rect2(0, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfk4m"]
+atlas = ExtResource("5_8mm7a")
+region = Rect2(480, 0, 480, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66tet"]
+animations = [{
+"frames": [{
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_hq1ik")
+}, {
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_nfk4m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainScene" type="Node2D" unique_id=1738264478]
 script = ExtResource("1_gyfs4")
@@ -97,3 +120,12 @@ scale = Vector2(15.044, 15)
 texture = ExtResource("2_2c62f")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=723530899]
+
+[node name="Background" type="AnimatedSprite2D" parent="." unique_id=1318049184]
+modulate = Color(0.6518682, 0.66453964, 0.66758263, 1)
+z_index = -15
+texture_filter = 1
+position = Vector2(0, -40)
+scale = Vector2(2.40625, 2.0249999)
+sprite_frames = SubResource("SpriteFrames_66tet")
+frame_progress = 0.022739252
